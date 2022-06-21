@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReportForm from "../components/ReportForm";
 
-const forging = () => {
+const Forging = () => {
   const [forgingLots, setForgingLots] = useState(null);
 
   useEffect(() => {
@@ -56,4 +56,4 @@ const forging = () => {
   );
 };
 
-export default forging;
+export default Forging;
