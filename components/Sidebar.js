@@ -36,7 +36,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="#">
+            <Link className="nav-link" href="/pressing">
               Pressing
             </Link>
           </li>
