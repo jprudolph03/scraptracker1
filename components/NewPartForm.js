@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const NewPartForm = () => {
   const [formSubSuccess, setFormSubSuccess] = useState(null);
+  const router = useRouter();
   const addNewPart = async (e) => {
     e.preventDefault();
 
@@ -28,6 +30,7 @@ const NewPartForm = () => {
 
     const result = await response.json();
     setFormSubSuccess(result);
+    router.push("/");
   };
 
   return (

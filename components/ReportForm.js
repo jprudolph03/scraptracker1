@@ -1,8 +1,8 @@
 import React from "react";
-
+import { useRouter } from "next/router";
 const ReportForm = ({ lotId }) => {
+  const router = useRouter();
   const handleScrapReportSubmit = async (e) => {
-    console.log(lotId);
     e.preventDefault();
     const data = {
       ForgingCounterTotal: e.target[0].value,
@@ -22,9 +22,9 @@ const ReportForm = ({ lotId }) => {
     const response = await fetch(endpoint, options);
 
     const result = await response.json();
-    console.log(result);
+
     if (result) {
-      alert(`Lot ${result.data.num} Updated`);
+      router.push("/");
     }
   };
   return (
