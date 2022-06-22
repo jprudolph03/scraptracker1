@@ -25,7 +25,20 @@ const ActiveLotTable = () => {
         </td>
         <td>{lot.eXt}</td>
         <td>
-          {lot.ForgingCounterTotal} ({lot.ForgingCounterTotal - lot.eXt})
+          {parseInt(
+            lot.ForgingCounterTotal -
+              (lot.ForgingScrap / lot.singlePartWeight) * 1000
+          )}
+          <span className="badge rounded-pill text-bg-primary">
+            {parseFloat(
+              ((lot.ForgingCounterTotal -
+                (lot.ForgingScrap / lot.singlePartWeight) * 1000) /
+                lot.eXt) *
+                100 -
+                100,
+              2
+            ).toFixed(2)}
+          </span>
         </td>
         <td></td>
         <td></td>

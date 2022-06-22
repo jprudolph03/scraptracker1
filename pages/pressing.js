@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 const Pressing = () => {
   const [pressingLots, setPressingLots] = useState(null);
   useEffect(() => {
-    fetch("https://scrap-tracker.herokuapp.com/api/lot")
+    fetch("https://scrap-tracker.herokuapp.com/api/lot", {
+      mode: "no-cors",
+    })
       .then((res) => res.json())
       .then((data) => {
         setPressingLots(data.data);
