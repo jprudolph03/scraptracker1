@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const NewLotForm = () => {
   const [parts, setParts] = useState([]);
@@ -6,6 +7,7 @@ const NewLotForm = () => {
   const [newLotNumber, setNewLotNumber] = useState(null);
   const [prefixLookup, setPrefixLookup] = useState(null);
   const [selectedPart, setSelectedPart] = useState(null);
+  const router = useRouter();
 
   //grab parts list, put in state
   useEffect(() => {
@@ -52,7 +54,9 @@ const NewLotForm = () => {
     const response = await fetch(endpoint, options);
 
     const result = await response.json();
-    alert(result.message);
+    if (result) {
+      router.push("/");
+    }
   };
 
   return (
