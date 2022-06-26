@@ -76,10 +76,10 @@ const ActiveLotTable = () => {
         </td>
         <td>
           {lot.VSPackCounterTotal}
-          <span className="badge rounded-pill text-bg-success">
+          <span className="badge rounded-pill text-bg-dark">
             {parseFloat(
-              ((lot.TappingCounterTotal -
-                (lot.TappingScrap / lot.singlePartWeight) * 1000) /
+              ((lot.VSPackCounterTotal -
+                (lot.VSPackScrap / lot.singlePartWeight) * 1000) /
                 lot.eXt) *
                 100 -
                 100
