@@ -23,7 +23,9 @@ const ActiveLotTable = () => {
         <td>
           {lot.num} - <span className="text-secondary">{lot.partName}</span>
         </td>
-        <td>{lot.eXt}</td>
+        <td>
+          <b>{lot.eXt}</b>
+        </td>
         <td>
           {parseInt(
             lot.ForgingCounterTotal -
