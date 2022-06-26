@@ -58,8 +58,35 @@ const ActiveLotTable = () => {
             %
           </span>
         </td>
-        <td></td>
-        <td></td>
+        <td>
+          {parseInt(
+            lot.TappingCounterTotal -
+              (lot.TappingScrap / lot.singlePartWeight) * 1000
+          )}
+          <span className="badge rounded-pill text-bg-info">
+            {parseFloat(
+              ((lot.TappingCounterTotal -
+                (lot.TappingScrap / lot.singlePartWeight) * 1000) /
+                lot.eXt) *
+                100 -
+                100
+            ).toFixed(2)}{" "}
+            %
+          </span>
+        </td>
+        <td>
+          {lot.VSPackCounterTotal}
+          <span className="badge rounded-pill text-bg-success">
+            {parseFloat(
+              ((lot.TappingCounterTotal -
+                (lot.TappingScrap / lot.singlePartWeight) * 1000) /
+                lot.eXt) *
+                100 -
+                100
+            ).toFixed(2)}{" "}
+            %
+          </span>
+        </td>
       </tr>
     ));
   }
