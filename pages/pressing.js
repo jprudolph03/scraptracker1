@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PressingReportForm from "../components/PressingReportForm";
 
 const Pressing = () => {
   const [pressingLots, setPressingLots] = useState(null);
@@ -9,7 +10,9 @@ const Pressing = () => {
         setPressingLots(data.data);
       });
   }, []);
-  const pressingReady = pressingLots?.filter((l) => l.ForgingCounterTotal > 1);
+  const pressingReady = pressingLots?.filter(
+    (l) => l.ForgingCounterTotal > 1 && l.PressingCounterTotal == null
+  );
   const rdy = pressingReady?.map((pR) => (
     // console.log(fR.num);
     <div key={pR._id} className="accordion-item collapsed">
@@ -32,8 +35,7 @@ const Pressing = () => {
         data-bs-parent="#accordionExample"
       >
         <div className="accordion-body">
-          Forging Counter Total: {pR.ForgingCounterTotal}
-          {/* <ReportForm lotId={fR._id} /> */}
+          <PressingReportForm lotId={pR._id} />
         </div>
       </div>
     </div>

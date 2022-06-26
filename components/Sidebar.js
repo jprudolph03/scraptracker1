@@ -41,7 +41,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="#">
+            <Link className="nav-link" href="/tapping">
               Tapping
             </Link>
           </li>

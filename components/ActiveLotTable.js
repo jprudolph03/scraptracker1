@@ -37,10 +37,27 @@ const ActiveLotTable = () => {
                 100 -
                 100,
               2
-            ).toFixed(2)}
+            ).toFixed(2)}{" "}
+            %
           </span>
         </td>
-        <td></td>
+        <td>
+          {parseInt(
+            lot.PressingCounterTotal -
+              (lot.PressingScrap / lot.singlePartWeight) * 1000
+          )}
+          <span className="badge rounded-pill text-bg-warning">
+            {parseFloat(
+              ((lot.PressingCounterTotal -
+                (lot.PressingScrap / lot.singlePartWeight) * 1000) /
+                lot.eXt) *
+                100 -
+                100,
+              2
+            ).toFixed(2)}{" "}
+            %
+          </span>
+        </td>
         <td></td>
         <td></td>
       </tr>
