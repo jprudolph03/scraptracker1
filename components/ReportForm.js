@@ -38,12 +38,15 @@ const ReportForm = ({ lotId }) => {
         />
       </div>
       <div className="mb-3">
-        <label className="form-label">Scrap Weight / Kg</label>
+        <label className="form-label" defaultValue={0}>
+          Scrap Weight / Kg
+        </label>
         <input
           type="number"
           className="form-control"
           id="inputForgingScrapWeight"
           step={"0.01"}
+          defaultValue={0}
         />
       </div>
       <button className="btn btn-primary" type="submit">

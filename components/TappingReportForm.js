@@ -46,6 +46,7 @@ const TappingReportForm = ({ lotId }) => {
           className="form-control"
           id="inputTappingScrapWeight"
           step={"0.01"}
+          defaultValue={0}
         />
       </div>
       <button className="btn btn-primary" type="submit">

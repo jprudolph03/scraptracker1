@@ -103,6 +103,8 @@ body {
   margin-left: 5px;
 }
 
-Link {
-  color: red;
+a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: firebrick;
 }

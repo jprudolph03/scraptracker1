@@ -41,7 +41,12 @@ const VSPackReportForm = ({ lotId }) => {
       </div>
       <div className="mb-3">
         <label className="form-label">Scrap Pcs</label>
-        <input type="number" className="form-control" id="inputVSPackPcs" />
+        <input
+          type="number"
+          className="form-control"
+          id="inputVSPackPcs"
+          defaultValue={0}
+        />
       </div>
       <button className="btn btn-primary" type="submit">
         Submit
